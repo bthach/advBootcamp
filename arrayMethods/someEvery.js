@@ -24,13 +24,9 @@ function hasAZero(num){
     return num.toString().split('').map(Number).some(function(val) {
         return val === 0;
     })
-    
-    // console.log(arr);
-
-
 }
 
-console.log(hasAZero(3332123213101232321))
+// console.log(hasAZero(3332123213101232321))
 
 /*
 Write a function called hasOnlyOddNumbers which accepts an array and returns true if every single number in the array is odd. If any of the values in the array are not odd, the function should return false. 
