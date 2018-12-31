@@ -7,7 +7,7 @@ var helpers = require("../helpers/todo")
 
 router.route('/')
     .get(helpers.getTodos)
-    .put(helpers.createTodo)
+    .post(helpers.createTodo)
 
 // Refactored Show Route, Update Route, Delete Route
 
