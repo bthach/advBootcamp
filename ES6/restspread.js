@@ -61,11 +61,13 @@ Examples:
 */
 
 function sumEvenArgs(...args){
-    
+    return args.reduce((acc, next) => next % 2 === 0  ? acc += next : acc, 0); // sum of numbers that mod 2 equal 0.
 }
 
+
 /* 
-Write a function called flip which accepts a function and a value for the keyword this. Flip should return a new function that when invoked, will invoke the function passed to flip with the correct value of the keyword this and all of the parameters passed to the function REVERSED. HINT - if you pass more than two parameters to flip, those parameters should be included as parameters to the inner function when it is invoked. You will have to make use of closure!
+Write a function called flip which accepts a function and a value for the keyword this. 
+Flip should return a new function that when invoked, will invoke the function passed to flip with the correct value of the keyword this and all of the parameters passed to the function REVERSED. HINT - if you pass more than two parameters to flip, those parameters should be included as parameters to the inner function when it is invoked. You will have to make use of closure!
 
 Examples:
 
@@ -94,10 +96,16 @@ Examples:
 
 */
 
+// Arguments from left to right, go from outer to inner called methods.
 
-function flip(fn, thisArg){
-    
+function flip(fn, thisArg, ...outerArgs){
+    return function(...innerArgs) {
+        let combinedArgs = outerArgs.concat(innerArgs).slice(0, fn.length); // Add outer and inner arguments, slice up to function length.
+        return fn.apply(thisArg, combinedArgs.reverse());
+    }
 }
+
+
 
 /* 
 Write a function called bind which accepts a function and a value for the keyword this. Bind should return a new function that when invoked, will invoke the function passed to bind with the correct value of the keyword this. HINT - if you pass more than two parameters to bind, those parameters should be included as parameters to the inner function when it is invoked. You will have to make use of closure!
@@ -131,6 +139,8 @@ Examples:
 
 */
 
-function bind(fn, thisArg){
-    
+function bind(fn, thisArg, ...outerArgs){
+    return function(...innerArgs) {
+        return fn.apply(thisArg, [...outerArgs, ...innerArgs]);
+    }
 }
