@@ -105,8 +105,6 @@ function flip(fn, thisArg, ...outerArgs){
     }
 }
 
-
-
 /* 
 Write a function called bind which accepts a function and a value for the keyword this. Bind should return a new function that when invoked, will invoke the function passed to bind with the correct value of the keyword this. HINT - if you pass more than two parameters to bind, those parameters should be included as parameters to the inner function when it is invoked. You will have to make use of closure!
 
