@@ -1,4 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<<<<<<< HEAD
+=======
+Created simple Todo app with React.
+>>>>>>> f0e972286c011118db464af27bc4d6a246d6b1b3
 
 ## Available Scripts
 
